@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     videoShowButton.addEventListener('click', function () {
         addClass(headerBlock, headerHiddenClass);
-        headerShowBreakpoint = 250;
+        headerShowBreakpoint = 300;
         addClass(ctaBlock, ctaHiddenClass);
         removeClass(videoBlock, videoHiddenClass);
         vimeoPlayer.play();
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     coursesOpenButton.addEventListener('click', function () {
         addClass(coursesBlock, coursesExpandedClass);
         addClass(headerBlock, headerHiddenClass);
-        headerShowBreakpoint = 250;
+        headerShowBreakpoint = 300;
     })
 
     coursesCloseButton.addEventListener('click', function () {
