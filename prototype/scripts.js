@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Header detached state handler
     var headerBlock = document.querySelector('.header');
-    var headerDetachBreakpoint = 150;
+    var headerDetachBreakpoint = 25;
     var headerDetachClass = 'header_detached';
 
     function headerDetachAdjustment() {
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var headerShowBreakpoint = 10;
     var headerStartingPoint = 0;
     var headerHiddenClass = 'header_hidden';
+    var headerFixedClass = 'header_fixed';
 
     function headerHideAdjustment(lastScrollPos, isScrollDirectionDown) {
         var currentScrollPos = window.pageYOffset;
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Hiding
-        if (isScrollDirectionDown && currentScrollPos - headerStartingPoint > headerHideBreakpoint) {
+        if (!hasClass(headerBlock, headerFixedClass) && isScrollDirectionDown && currentScrollPos - headerStartingPoint > headerHideBreakpoint) {
             addClass(headerBlock, headerHiddenClass);
         }
 
@@ -70,15 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var ctaHiddenClass = 'intro__cta_hidden';
     var videoShowButton = document.querySelector('.intro__play');
     var videoHideButton = document.querySelector('.intro__close');
+    var videoHideButtonHiddenClass = 'intro__close_hidden';
     var videoBlock = document.querySelector('.intro__video');
     var videoHiddenClass = 'intro__video_hidden';
-    // var vimeoPlayer = new Vimeo.Player(document.querySelector('.intro__iframe'));
+    var vimeoPlayer = new Vimeo.Player(document.querySelector('.intro__iframe'));
 
     videoShowButton.addEventListener('click', function () {
         addClass(headerBlock, headerHiddenClass);
         headerShowBreakpoint = 300;
         addClass(ctaBlock, ctaHiddenClass);
         removeClass(videoBlock, videoHiddenClass);
+        removeClass(videoHideButton, videoHideButtonHiddenClass);
         vimeoPlayer.play();
     })
 
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         headerShowBreakpoint = 10;
         removeClass(ctaBlock, ctaHiddenClass);
         addClass(videoBlock, videoHiddenClass);
+        addClass(videoHideButton, videoHideButtonHiddenClass);
         vimeoPlayer.pause();
     })
 
@@ -107,5 +111,24 @@ document.addEventListener('DOMContentLoaded', function() {
         removeClass(coursesBlock, coursesExpandedClass);
         removeClass(headerBlock, headerHiddenClass);
         headerShowBreakpoint = 10;
+    })
+
+
+    // Top nav open/close button
+    var navBlock = document.querySelector('.nav')
+    var navExpandedClass = 'nav_expanded';
+    var menuButton = document.querySelector('.menu-button');
+    var menuButtonPressedClass = 'menu-button_pressed';
+
+    menuButton.addEventListener('click', function () {
+        if (!hasClass(navBlock, navExpandedClass)) {
+            addClass(headerBlock, headerFixedClass);
+            addClass(navBlock, navExpandedClass);
+            addClass(menuButton, menuButtonPressedClass);
+        } else {
+            removeClass(headerBlock, headerFixedClass);
+            removeClass(navBlock, navExpandedClass);
+            removeClass(menuButton, menuButtonPressedClass);
+        }
     })
 });

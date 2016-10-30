@@ -3,6 +3,7 @@
 <head>
     <title>Vector</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -10,6 +11,7 @@
     <div id="app">
         <header class="header">
             <div class="logo"></div>
+            <button class="menu-button"></button>
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__item">
@@ -39,14 +41,16 @@
         <main class="main">
             <section class="section section_intro">
                 <div class="intro">
+                    <button class="intro__close intro__close_hidden"></button>
                     <div class="intro__cta">
-                        <h1 class="intro__heading">Онлайн-школа городских
-                        предпринимателей</h1>
-                        <a class="intro__button" href="javascript:;" title="Начать обучение">Начать обучение</a>
-                        <a class="intro__button intro__play" href="javascript:;" title="Посмотреть видео">Посмотреть видео</a>
+                        <div class="intro__cta-wrap">
+                            <h1 class="intro__heading">Онлайн-школа городских
+                            предпринимателей</h1>
+                            <a class="intro__button" href="javascript:;" title="Начать обучение">Начать обучение</a>
+                            <a class="intro__button intro__play" href="javascript:;" title="Посмотреть видео">Посмотреть видео</a>
+                        </div>
                     </div>
                     <div class="intro__video intro__video_hidden">
-                        <button class="intro__close"></button>
                         <iframe class="intro__iframe" src="https://player.vimeo.com/video/170509497" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                 </div>
