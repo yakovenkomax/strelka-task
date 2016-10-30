@@ -10,6 +10,7 @@ class Header extends Component {
             isFixed: false,
             isHidden: false,
             isDetached: false,
+            isExpanded: false,
             startingPoint: 0,
             lastScrollPos: 0,
             isScrollDirectionDown: true,
@@ -99,16 +100,27 @@ class Header extends Component {
         this.setState({ lastScrollPos: CURRENT_SCROLL_POS });
     }
 
+    _menuButtonHandler(e) {
+        e.preventDefault();
+
+        this.setState({
+            isExpanded: !this.state.isExpanded,
+            isFixed:    !this.state.isFixed,
+        });
+    }
+
     render() {
         const { isHidden,
                 isDetached,
+                isExpanded,
+                isFixed,
                 nav } = this.state;
 
         return (
-            <header className={classNames('header', { 'header_detached': isDetached, 'header_hidden': isHidden })}>
+            <header className={classNames('header', { 'header_detached': isDetached, 'header_hidden': isHidden, 'header_fixed': isFixed })}>
                 <div className="logo"></div>
-                <button className="menu-button"></button>
-                <nav className="nav">
+                <button className={classNames('menu-button', { 'menu-button_pressed': isExpanded })} onClick={this._menuButtonHandler.bind(this)}></button>
+                <nav className={classNames('nav', { 'nav_expanded': isExpanded })}>
                     <ul className="nav__list">
                         { nav.map(({title, url, mod}, index) =>
                             <li className="nav__item" key={title.toString() + index}>
