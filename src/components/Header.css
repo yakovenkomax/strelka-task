@@ -33,6 +33,7 @@
     display: none;
     box-sizing: border-box;
     border: 0;
+    outline: 0;
     margin-top: 0.89em;
     width: 4em;
     height: 4em;
