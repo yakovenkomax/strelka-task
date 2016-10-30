@@ -1,0 +1,7 @@
+.main {
+    overflow: hidden;
+}
+.section {
+    height: 40em;
+    background-color: var(--main-color);
+}

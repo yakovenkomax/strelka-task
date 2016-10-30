@@ -1,5 +1,41 @@
+:root {
+    --main-color: #2253ff;
+    --layout-width: 1240px;
+    --fixed-width-padding: 0 calc(50% - var(--layout-width)/2 + 20px);
+    --animation-speed: .3s;
+}
+@media (max-width: 1239px) {
+    :root {
+        --layout-width: 1020px;
+    }
+}
+@media (max-width: 1023px) {
+    :root {
+        --layout-width: 100%;
+    }
+}
+
+html {
+    height: 100%;
+}
 body {
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+    min-height: 100%;
+    font-size: 18px;
+    background-color: var(--main-color);
+}
+@media (max-width: 1239px) {
+    body {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1023px) {
+    body {
+        font-size: 13px;
+    }
+}
+@media (max-width: 899px) {
+    body {
+        font-size: 12px;
+    }
 }
