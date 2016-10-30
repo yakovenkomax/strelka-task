@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
 import './Courses.css';
 
@@ -6,6 +7,7 @@ class Courses extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isExpanded:  false,
             title:       'Онлайн-курсы',
             description: 'Наши курсы — практические, они помогают в формировании образа мышления у горожанина, и формировании спроса на городские инициативы',
             buttonTitle: 'Посмотреть все курсы',
@@ -44,17 +46,31 @@ class Courses extends Component {
         };
     }
 
+    _showButtonHandler(e) {
+        e.preventDefault();
+
+        window.dispatchEvent(new Event('hideHeader'));
+        this.setState({ isExpanded: true });
+    }
+
+    _closeButtonHandler(e) {
+        e.preventDefault();
+
+        window.dispatchEvent(new Event('showHeader'));
+        this.setState({ isExpanded: false });
+    }
+
     render() {
-        const { title, description, buttonTitle, buttonHref, courses } = this.state;
+        const { isExpanded, title, description, buttonTitle, buttonHref, courses } = this.state;
 
         return (
-            <div className="courses">
-                <button className="courses__close"></button>
+            <div className={classNames('courses', { 'courses_expanded': isExpanded })}>
+                <button className="courses__close" onClick={this._closeButtonHandler.bind(this)}></button>
                 <div className="courses__left">
                     <div className="courses__desc">
                         <h2 className="courses__heading">{title}</h2>
                         <p className="courses__text">{description}</p>
-                        <a className="courses__link" href={buttonHref} title={buttonTitle}>{buttonTitle}</a>
+                        <a className="courses__link" href={buttonHref} title={buttonTitle} onClick={this._showButtonHandler.bind(this)}>{buttonTitle}</a>
                     </div>
                 </div>
                 <div className="courses__right">
