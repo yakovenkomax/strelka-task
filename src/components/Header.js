@@ -40,8 +40,27 @@ class Header extends Component {
         };
     }
 
+    componentWillMount() {
+        const self = this;
+
+        window.addEventListener('hideHeader', function(event) {
+            self.setState({ isHidden: true });
+        });
+        window.addEventListener('showHeader', function(event) {
+            self.setState({ isHidden: false });
+        });
+        window.addEventListener('scroll', function () {
+            self._hiddenStateHandler();
+            self._detachedStateHandler();
+        })
+    }
+
     componentDidMount() {
-        this._scrollHandler();
+        this.setState({
+            startingPoint: window.pageYOffset,
+            lastScrollPos: window.pageYOffset
+        });
+        this._detachedStateHandler();
     }
 
     _detachedStateHandler() {
@@ -78,15 +97,6 @@ class Header extends Component {
         }
 
         this.setState({ lastScrollPos: CURRENT_SCROLL_POS });
-    }
-
-    _scrollHandler() {
-        const self = this;
-
-        window.addEventListener('scroll', function () {
-            self._hiddenStateHandler();
-            self._detachedStateHandler();
-        })
     }
 
     render() {
