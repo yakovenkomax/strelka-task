@@ -77,7 +77,7 @@ body {
     margin-top: 0.89em;
     width: 8.39em;
     height: 1.67em;
-    background: url(../src/static/logo.svg) center/contain no-repeat;
+    background: url(../public/static/logo.svg) center/contain no-repeat;
 }
 .menu-button {
     position: relative;
@@ -89,7 +89,7 @@ body {
     width: 4em;
     height: 4em;
     padding: 0;
-    background: url(../src/static/menu-button.svg) center/2em no-repeat;
+    background: url(../public/static/menu-button.svg) center/2em no-repeat;
 }
 .nav__list {
     margin: 0;
@@ -123,7 +123,7 @@ body {
         display: block;
     }
     .menu-button_pressed {
-        background: url(../src/static/button__close.svg) center/2em no-repeat;
+        background: url(../public/static/button__close.svg) center/2em no-repeat;
     }
     .nav {
         display: flex;
@@ -174,7 +174,7 @@ body {
     width: 100%;
     height: 100%;
     align-items: center;
-    background: url(../src/static/section_intro.jpg) center/cover no-repeat;
+    background: url(../public/static/section_intro.jpg) center/cover no-repeat;
     transition: opacity var(--animation-speed) var(--animation-speed);
 }
 .intro_video-mode .intro__cta {
@@ -207,7 +207,7 @@ body {
     margin: 1em 0;
     padding: 1em 0em 1em 4.5em;
     font: 1em/1.35 'Roboto', sans-serif;
-    background: url(../src/static/intro__play.svg) left/contain no-repeat;
+    background: url(../public/static/intro__play.svg) left/contain no-repeat;
     text-decoration: none;
     color: #fff;
 }
@@ -260,7 +260,7 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    background: url(../src/static/button__close.svg) center no-repeat;
+    background: url(../public/static/button__close.svg) center no-repeat;
 }
 .intro_video-mode .intro__close {
     opacity: 1;
@@ -319,7 +319,7 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    background: url(../src/static/button__close.svg) center no-repeat;
+    background: url(../public/static/button__close.svg) center no-repeat;
 }
 .courses_expanded .courses__close {
     visibility: visible;
@@ -357,7 +357,7 @@ body {
     font: 1.39em/1 'Roboto', sans-serif;
     text-decoration: none;
     color: #fff;
-    background: url(../src/static/courses__link.svg) left/1em no-repeat;
+    background: url(../public/static/courses__link.svg) left/1em no-repeat;
 }
 .courses__right {
     position: absolute;
@@ -448,3 +448,4 @@ body {
     flex-basis: 6.22em;
     transform: translateY(0);
     transition-delay: 0s, .15s, .15s;
+}
