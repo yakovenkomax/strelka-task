@@ -9,7 +9,7 @@ import './App.css';
 class App extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="app">
                 <Header/>
                 <main className="main">
                     <section className="section section_intro">

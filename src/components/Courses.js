@@ -11,32 +11,32 @@ class Courses extends Component {
             buttonTitle: 'Посмотреть все курсы',
             buttonHref:  '#',
             courses: [{
-                imgUrl: 'url(../src/static/course-tile__image1.jpg)',
+                imgUrl: 'url(/static/course-tile__image1.jpg)',
                 title:  'Экскурсии как бизнес',
                 desc:   'Новый курс о том, как стать независимым гидом и проводить экскурсии',
                 href:   '#'
             },{
-                imgUrl: 'url(../src/static/course-tile__image2.jpg)',
+                imgUrl: 'url(/static/course-tile__image2.jpg)',
                 title:  'Как создать спортивный проект',
                 desc:   'Новый курс о том, как стать независимым гидом и проводить экскурсии',
                 href:   '#'
             },{
-                imgUrl: 'url(../src/static/course-tile__image3.jpg)',
+                imgUrl: 'url(/static/course-tile__image3.jpg)',
                 title:  'Как открыть хостел',
                 desc:   'Новый курс о том, как стать независимым гидом и проводить экскурсии',
                 href:   '#'
             },{
-                imgUrl: 'url(../src/static/course-tile__image4.jpg)',
+                imgUrl: 'url(/static/course-tile__image1.jpg)',
                 title:  'Экскурсии как бизнес',
                 desc:   'Новый курс о том, как стать независимым гидом и проводить экскурсии',
                 href:   '#'
             },{
-                imgUrl: 'url(../src/static/course-tile__image5.jpg)',
+                imgUrl: 'url(/static/course-tile__image2.jpg)',
                 title:  'Как создать спортивный проект',
                 desc:   'Новый курс о том, как стать независимым гидом и проводить экскурсии',
                 href:   '#'
             },{
-                imgUrl: 'url(../src/static/course-tile__image6.jpg)',
+                imgUrl: 'url(/static/course-tile__image3.jpg)',
                 title:  'Как открыть хостел',
                 desc:   'Новый курс о том, как стать независимым гидом и проводить экскурсии',
                 href:   '#'

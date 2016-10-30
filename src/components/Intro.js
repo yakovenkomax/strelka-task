@@ -20,12 +20,15 @@ class Intro extends Component {
 
         return (
             <div className="intro">
+                <button className="intro__close"></button>
                 <div className="intro__cta">
-                    <h1 className="intro__heading">{title}</h1>
-                    <a className="intro__button" href={buttonStartHref} title={buttonStartTitle}>{buttonStartTitle}</a>
-                    <a className="intro__button intro__play" href={buttonPlayHref} title={buttonPlayTitle}>{buttonPlayTitle}</a>
+                    <div className="intro__cta-wrap">
+                        <h1 className="intro__heading">{title}</h1>
+                        <a className="intro__button" href={buttonStartHref} title={buttonStartTitle}>{buttonStartTitle}</a>
+                        <a className="intro__button intro__play" href={buttonPlayHref} title={buttonPlayTitle}>{buttonPlayTitle}</a>
+                    </div>
                 </div>
-                <div className="intro__video intro__video_hidden">
+                <div className="intro__video">
                     <button className="intro__close"></button>
                     <iframe className="intro__iframe" src={videoUrl} width="640" height="360" frameBorder="0" allowFullScreen></iframe>
                 </div>
