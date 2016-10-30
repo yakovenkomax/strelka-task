@@ -67,30 +67,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Video show/hide handlers
-    var ctaBlock = document.querySelector('.intro__cta');
-    var ctaHiddenClass = 'intro__cta_hidden';
-    var videoShowButton = document.querySelector('.intro__play');
-    var videoHideButton = document.querySelector('.intro__close');
-    var videoHideButtonHiddenClass = 'intro__close_hidden';
-    var videoBlock = document.querySelector('.intro__video');
-    var videoHiddenClass = 'intro__video_hidden';
+    var introBlock = document.querySelector('.intro');
+    var introVideoModeClass = 'intro_video-mode';
+    var introPlayButton = document.querySelector('.intro__play');
+    var introCloseButton = document.querySelector('.intro__close');
     var vimeoPlayer = new Vimeo.Player(document.querySelector('.intro__iframe'));
 
-    videoShowButton.addEventListener('click', function () {
+    introPlayButton.addEventListener('click', function () {
         addClass(headerBlock, headerHiddenClass);
         headerShowBreakpoint = 300;
-        addClass(ctaBlock, ctaHiddenClass);
-        removeClass(videoBlock, videoHiddenClass);
-        removeClass(videoHideButton, videoHideButtonHiddenClass);
+        addClass(introBlock, introVideoModeClass);
         vimeoPlayer.play();
     })
 
-    videoHideButton.addEventListener('click', function () {
+    introCloseButton.addEventListener('click', function () {
         removeClass(headerBlock, headerHiddenClass);
         headerShowBreakpoint = 10;
-        removeClass(ctaBlock, ctaHiddenClass);
-        addClass(videoBlock, videoHiddenClass);
-        addClass(videoHideButton, videoHideButtonHiddenClass);
+        removeClass(introBlock, introVideoModeClass);
         vimeoPlayer.pause();
     })
 
