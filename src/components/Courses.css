@@ -21,7 +21,7 @@
 }
 .courses__close {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     left: 50%;
     top: -5.5em;
     width: 5.5em;
@@ -52,6 +52,7 @@
 }
 .courses__left {
     position: relative;
+    z-index: 1;
     width: 33em;
     transition: opacity var(--animation-speed) var(--animation-speed), visibility var(--animation-speed) var(--animation-speed);
 }
@@ -96,7 +97,7 @@
 }
 .courses__list {
     margin: 3em 0;
-    padding: 0 1.7em;
+    padding: 0 calc(50% - 10em);
     list-style-type: none;
     display: inline-flex;
     flex-direction: row-reverse;
@@ -106,7 +107,7 @@
 .course-tile {
     box-sizing: border-box;
     position: relative;
-    margin: 0 1.7em;
+    margin: 0 3.4em 0 0;
     flex: 0 0 20em;
     width: 20em;
     height: 33.34em;
@@ -114,6 +115,9 @@
     box-shadow: 0 1.07em 1.25em rgba(0, 0, 0, .15);
     transition: box-shadow .15s;
     counter-increment: course;
+}
+.course-tile:first-child {
+    margin-right: 0;
 }
 .course-tile:hover {
     box-shadow: 0 1.07em 2.5em rgba(0, 0, 0, .15);
