@@ -1,5 +1,5 @@
 # strelka-task
-Interview task for Strelka Institute
+Result: 👍
 
 ## Plain HTML prototype
 prototype/index.html 
